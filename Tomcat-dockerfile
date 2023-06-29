@@ -1,0 +1,15 @@
+##creating Dockerfile for tomcat installation
+FROM centos:latest
+RUN yum update -y
+RUN mkdir /opt/tomcat/
+WORKDIR /opt/tomcat
+ADD tomcat url 
+RUN tar -xvf tomcatfile.tar.gz
+RUN mv tomcatfaultname to tomcat
+RUN cp build.war .
+EXP 8080
+CMD ["/opt/tomcat/bin/startup.sh" start]
+
+####commands to build docker file
+docker build -f mytomcat -p path .
+docker run mytomcat -p 8080:8080
