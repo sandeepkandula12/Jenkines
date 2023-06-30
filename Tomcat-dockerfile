@@ -1,15 +1,16 @@
 ##creating Dockerfile for tomcat installation
 FROM centos:latest
+MAINTAINER sandeepkandula23@gmail.com
 RUN yum update -y
+RUN yum inastall java -y
 RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
-ADD tomcat url 
-RUN tar -xvf tomcatfile.tar.gz
-RUN mv tomcatfaultname to tomcat
-RUN cp build.war .
-EXP 8080
-CMD ["/opt/tomcat/bin/startup.sh" start]
-
+ADD <tomcat_url_link> .
+RUN tar -xvf <tomcatfile.tar.gz>
+RUN mv tomcatfilename  /opt/tomcat/
+RUN cp build.war /opr/tomcat/webapps/
+EXPOSE 8080
+CMD ["/opt/tomcat/bin/catalina.sh" "run"]
 ####commands to build docker file
 docker build -f mytomcat -p path .
 docker run mytomcat -p 8080:8080
